@@ -1,16 +1,20 @@
 FORECAST for {{ city }}
-
+<hr /> 3hrs periods:
+<a href='#/forecast/2'>2</a> |
+<a href='#/forecast/5'>5</a> |
+<a href='#/forecast/7'>7</a>
+<hr />
 <div ng-repeat='w in weatherResult.list'>
     <div class='row'>
         <div class='col-md-12'>
             <div class='panel panel-default'>
                 <div class='panel-heading'>
-                    <h3 class='panel-tittle'>{{convertToDate(w.dt) | date: 'MMM d, y'}}</h3>
+                    <h3 class='panel-tittle'>{{convertToDate(w.dt) | date: 'medium' }}</h3>
                 </div>
                 <div class='panel-body'>
                     Daytime temperature: {{convertToFahrenheit(w.main.temp)}}
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
 
