@@ -1,3 +1,29 @@
 //MODULE
 
-var watherApp = angular.module('weatherApp', ['ngRoute', 'ngResource'])
+var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource'])
+
+//ROUTES
+
+weatherApp.config(function ($routeProvider){
+
+    $routeProvider
+    .when('/', {
+        templateUrl: 'pages/home.html',
+        controller: 'homeController'
+    })
+    .when('/forecast', {
+        templateUrl: 'pages/forecast.html',
+        controller: 'forecastController'
+    })
+})
+
+
+// CONTROLERS
+
+weatherApp.controller('homeController', ['$scope', function($scope) {
+
+}])
+
+weatherApp.controller('forecastController', ['$scope', function($scope){
+
+}])
