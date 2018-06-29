@@ -41,7 +41,7 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
 
     $scope.city = cityService.city
 
-    $scope.days = $routeParams.days
+    $scope.days = $routeParams.days || '2'
 
     $scope.weatherAPI =
         $resource('https://api.openweathermap.org/data/2.5/forecast?appid=079a2a6a8a77674bd35ef01cb8111d46', {
@@ -55,8 +55,8 @@ weatherApp.controller('forecastController', ['$scope', '$resource', '$routeParam
     $scope.convertToFahrenheit = function (degK) {
         return Math.round((1.8 * (degK - 273)) + 32)
     }
-    $scope.convertToDate = function(dt) {
-        
+    $scope.convertToDate = function (dt) {
+
         return new Date(dt * 1000)
 
     }
